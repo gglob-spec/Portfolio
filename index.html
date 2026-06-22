@@ -18,6 +18,8 @@
             --javascript-color: #f7df1e;
             --git-color: #f05032;
             --python-color: #3776ab;
+            --react-color: #61dafb;
+            --azure-color: #0078d4;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -87,6 +89,8 @@
         .icon-github { color: #181717; }
         .icon-python { color: var(--python-color); }
         .icon-chart { color: #fd7e14; }
+        .icon-react { color: var(--react-color); background-color: #20232a; padding: 2px; border-radius: 4px; } /* Dark backing so the light blue icon pops */
+        .icon-azure { color: var(--azure-color); }
 
         .contact-links a {
             font-size: 1.2rem;
@@ -145,45 +149,59 @@
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6">
                     <h3 class="h4 mb-3 text-dark">My Journey & Goals</h3>
-                    <p class="text-muted">With a strong background in research, data management, and agricultural systems, I now use software development to build practical digital tools that solve real-world problems. I enjoy turning complex ideas and scattered processes into simple, user-friendly web applications that save time, improve decision-making, and create value.</p>
-                    <p class="text-muted">My current focus is developing responsive web portals that are easy to use, well-organized, and designed to support people, businesses, and agricultural communities.</p>
+                    <p class="text-muted">With a strong background in research, data management, and agricultural systems, I now use software development to build practical digital tools that solve everyday problems. I enjoy turning complex ideas and scattered processes into simple, user-friendly web applications that save time, improve decision-making, and create value.</p>
+                    <p class="text-muted">My current focus is developing responsive web portals that are easy to use, well-organized, and designed to support people, businesses, and communities.</p>
                 </div>
-                <div class="col-lg-6">
-                    <h3 class="h4 mb-4 text-dark">Core Tech Skills</h3>
-                    
-                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-                        <span class="fw-semibold text-dark">HTML5 & CSS3 (Bootstrap / Grid)</span>
-                        <div class="skill-icon-group d-flex align-items-center">
-                            <i class="fa-brands fa-html5 icon-html5" title="HTML5"></i>
-                            <i class="fa-brands fa-css3-alt icon-css3" title="CSS3"></i>
-                            <i class="fa-brands fa-bootstrap icon-bootstrap" title="Bootstrap"></i>
-                            <i class="fa-solid fa-table-cells-large icon-grid" title="Grid Layouts"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-                        <span class="fw-semibold text-dark">JavaScript (ES6+)</span>
-                        <div class="skill-icon-group d-flex align-items-center">
-                            <i class="fa-brands fa-js icon-js" title="JavaScript"></i>
-                            <i class="fa-solid fa-code icon-es6" title="ES6+ Features"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-                        <span class="fw-semibold text-dark">Git & Version Control</span>
-                        <div class="skill-icon-group d-flex align-items-center">
-                            <i class="fa-brands fa-git-alt icon-git" title="Git"></i>
-                            <i class="fa-brands fa-github icon-github" title="GitHub"></i>
-                        </div>
-                    </div>
-                    
-                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-                        <span class="fw-semibold text-dark">Data Visualization & Python</span>
-                        <div class="skill-icon-group d-flex align-items-center">
-                            <i class="fa-brands fa-python icon-python" title="Python"></i>
-                            <i class="fa-solid fa-chart-column icon-chart" title="Data Visualization"></i>
-                        </div>
-                    </div>
+<div class="col-lg-6">
+    <h3 class="h4 mb-4 text-dark">Core Tech Skills</h3>
+    
+    <!-- Frontend Core Stack -->
+    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+        <span class="fw-semibold text-dark">HTML5 & CSS3 (Bootstrap / Grid)</span>
+        <div class="skill-icon-group d-flex align-items-center">
+            <i class="fa-brands fa-html5 icon-html5" title="HTML5"></i>
+            <i class="fa-brands fa-css3-alt icon-css3" title="CSS3"></i>
+            <i class="fa-brands fa-bootstrap icon-bootstrap" title="Bootstrap"></i>
+            <i class="fa-solid fa-table-cells-large icon-grid" title="Grid Layouts"></i>
+        </div>
+    </div>
+    
+    <!-- JavaScript & Modern Frameworks -->
+    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+        <span class="fw-semibold text-dark">JavaScript (ES6+) & React</span>
+        <div class="skill-icon-group d-flex align-items-center">
+            <i class="fa-brands fa-js icon-js" title="JavaScript"></i>
+            <i class="fa-solid fa-code icon-es6" title="ES6+ Features"></i>
+            <i class="fa-brands fa-react icon-react" title="React.js"></i>
+        </div>
+    </div>
+    
+    <!-- Cloud Infrastructure & Architecture -->
+    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+        <span class="fw-semibold text-dark">Cloud Computing & Infrastructure</span>
+        <div class="skill-icon-group d-flex align-items-center">
+            <i class="fa-solid fa-cloud icon-azure" title="Microsoft Azure Cloud"></i>
+        </div>
+    </div>
+    
+    <!-- Version Control & Collaboration -->
+    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+        <span class="fw-semibold text-dark">Git & Version Control</span>
+        <div class="skill-icon-group d-flex align-items-center">
+            <i class="fa-brands fa-git-alt icon-git" title="Git"></i>
+            <i class="fa-brands fa-github icon-github" title="GitHub"></i>
+        </div>
+    </div>
+    
+    <!-- Data Visualization & Python -->
+    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+        <span class="fw-semibold text-dark">Data Visualization & Python</span>
+        <div class="skill-icon-group d-flex align-items-center">
+            <i class="fa-brands fa-python icon-python" title="Python"></i>
+            <i class="fa-solid fa-chart-column icon-chart" title="Data Visualization"></i>
+        </div>
+    </div>
+</div>
 
                 </div>
             </div>
@@ -197,13 +215,13 @@
                 <div class="col-md-4">
                     <div class="card h-100 border-0 shadow-sm project-card">
                         <div class="card-body p-4">
-                            <div class="text-accent mb-3"><i class="fa-solid fa-seedling fa-2x"></i></div>
-                            <h4 class="card-title fw-bold">Agri-Analytics Dashboard</h4>
-                            <p class="card-text text-muted">A responsive operational tracking portal designed for tracking certified seed logistics, yield variances, and local data aggregation metrics across complex regional pipelines.</p>
-                            <span class="badge bg-secondary mb-2">HTML5</span> <span class="badge bg-secondary mb-2">Bootstrap</span> <span class="badge bg-secondary mb-2">JS Charting</span>
+                            <div class="text-accent mb-3"><i class="fa-solid fa-earth-africa fa-2x"></i></div>
+                            <h4 class="card-title fw-bold">SDG Smart Assistant</h4>
+                            <p class="card-text text-muted">An AI-powered web hub that helps online and offline users engage with the United Nations Sustainable Development Goals (SDGs), turning global goals into practical community actions and actionable insights for everyday people to support sustainable development.</p>
+                            <span class="badge bg-secondary mb-2">HTML5</span> <span class="badge bg-secondary mb-2">CSS3</span> <span class="badge bg-secondary mb-2">JavaScript (ES6+)</span>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-4 pt-0">
-                            <a href="#" target="_blank" class="text-decoration-none text-accent fw-bold">Request Live Demo</a>
+                            <a href=" https://gglob-spec.github.io/My-portfolio-case/mini-project" target="_blank" class="text-decoration-none text-accent fw-bold">Launch Live Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -213,7 +231,7 @@
                             <div class="text-accent mb-3"><i class="fa-solid fa-cloud-sun-rain fa-2x"></i></div>
                             <h4 class="card-title fw-bold">WeatherWise Forecast App</h4>
                             <p class="card-text text-muted">A clean and responsive weather application that helps users check real-time weather updates, daily forecasts, temperature changes, and location-based conditions. It presents weather information clearly across devices, making it easy for users to plan their day with confidence.</p>
-                            <span class="badge bg-secondary mb-2">CSS Grid</span> <span class="badge bg-secondary mb-2">Vanilla JS</span> <span class="badge bg-secondary mb-2">Git</span>
+                            <span class="badge bg-secondary mb-2">CSS Grid</span> <span class="badge bg-secondary mb-2">Vanilla JS</span> <span class="badge bg-secondary mb-2">REST API</span>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-4 pt-0">
                             <a href=" https://gglob-spec.github.io/My-portfolio-case/weather%20APP/" target="_blank" class="text-decoration-none text-accent fw-bold">Launch Live Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
@@ -224,12 +242,12 @@
                     <div class="card h-100 border-0 shadow-sm project-card">
                         <div class="card-body p-4">
                             <div class="text-accent mb-3"><i class="fa-solid fa-users fa-2x"></i></div>
-                            <h4 class="card-title fw-bold">Hub Connect Platform</h4>
-                            <p class="card-text text-muted">A localized portal dedicated to regional training deployments and skill matrix assessments, offering fully fluid tables and clean card breakdowns.</p>
-                            <span class="badge bg-secondary mb-2">Bootstrap 5</span> <span class="badge bg-secondary mb-2">Flexbox</span> <span class="badge bg-secondary mb-2">UI/UX</span>
+                            <h4 class="card-title fw-bold">StockFlow Hub</h4>
+                            <p class="card-text text-muted">A secure, responsive tracking portal for managing commodity logistics, quality assurance, sales, dispatch records, and real-time warehouse balances from one workspace, supporting team-based access and keeping operational data accurate, and connected.</p>
+                            <span class="badge bg-secondary mb-2">HTML5</span> <span class="badge bg-secondary mb-2">CSS3</span> <span class="badge bg-secondary mb-2">Chart.js</span>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-4 pt-0">
-                            <a href="#" target="_blank" class="text-decoration-none text-accent fw-bold">View Repo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
+                            <a href="#contact" class="text-decoration-none text-accent fw-bold">Request a Live Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
                         </div>
                     </div>
                 </div>
