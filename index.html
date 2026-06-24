@@ -20,11 +20,17 @@
             --python-color: #3776ab;
             --react-color: #61dafb;
             --azure-color: #0078d4;
+            --email-color: #ea4335;
         }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             scroll-behavior: smooth;
             padding-top: 56px; /* Offset for fixed navbar */
+            color: #333;
+        }
+        /* Ensures smooth scrolling lands exactly at the section start, accounting for the fixed navbar height */
+        section {
+            scroll-margin-top: 56px;
         }
         .bg-primary-custom {
             background-color: var(--primary-color) !important;
@@ -83,26 +89,61 @@
         .icon-css3 { color: var(--css3-color); }
         .icon-bootstrap { color: var(--bootstrap-color); }
         .icon-grid { color: #20c997; }
-        .icon-js { color: var(--javascript-color); background-color: #323330; padding: 2px; border-radius: 4px; } /* Dark backing to pop yellow JS icon */
+        .icon-js { color: var(--javascript-color); background-color: #323330; padding: 2px; border-radius: 4px; }
         .icon-es6 { color: #007acc; }
         .icon-git { color: var(--git-color); }
         .icon-github { color: #181717; }
         .icon-python { color: var(--python-color); }
         .icon-chart { color: #fd7e14; }
-        .icon-react { color: var(--react-color); background-color: #20232a; padding: 2px; border-radius: 4px; } /* Dark backing so the light blue icon pops */
+        .icon-react { color: var(--react-color); background-color: #20232a; padding: 2px; border-radius: 4px; }
         .icon-azure { color: var(--azure-color); }
 
-        .contact-links a {
-            font-size: 1.2rem;
+        /* Formless Centered Contact Layout Links */
+        .contact-links-wrap a {
+            font-size: 1.15rem;
             color: var(--primary-color);
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.25s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 14px 28px;
+            background: white;
+            border-radius: 50px;
+            border: 1px solid #dee2e6;
+            min-width: 240px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.03);
         }
-        .contact-links a:hover {
-            color: var(--accent-color);
+        .contact-links-wrap a:hover {
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+        .contact-links-wrap .link-linkedin:hover {
+            background-color: #0a66c2;
+            border-color: #0a66c2;
+        }
+        .contact-links-wrap .link-whatsapp:hover {
+            background-color: #25d366;
+            border-color: #25d366;
+        }
+        .contact-links-wrap .link-email:hover {
+            background-color: var(--email-color);
+            border-color: var(--email-color);
+        }
+        .contact-links-wrap i {
+            font-size: 1.4rem;
+        }
+        .contact-links-wrap a:hover i {
+            color: white !important;
         }
         footer {
             background-color: #1a252f;
+        }
+        /* Increased specificity to firmly override Bootstrap container widths */
+        footer div.container {
+            max-width: 600px !important; 
+            margin: 0 auto;   
         }
     </style>
 </head>
@@ -119,7 +160,7 @@
                     <li class="nav-item"><a class="nav-link text-white mx-2" href="#home">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-white mx-2" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link text-white mx-2" href="#projects">Projects</a></li>
-                    <li class="nav-item"><a class="nav-link text-white mx-2" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link text-white mx-2" href="#connect-header">Contact</a></li>
                 </ul>
             </div>
         </div>
@@ -129,86 +170,80 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <h1 class="display-3 fw-bold mb-3">Hi, I'm <span class="text-accent">Gloria Boakyewaa Adu</span></h1>
-                    <p class="lead mb-4 fs-3">Turning Research Experience into Smart Digital Solutions.</p>
+                    <h1 class="display-3 fw-bold mb-3 text-white">Hi, I'm <span class="text-accent">Gloria Boakyewaa Adu</span></h1>
+                    <p class="lead mb-4 fs-3 text-white-50">Turning Research Experience into Smart Digital Solutions.</p>
                     <p class="text-light mb-4">I blend 17+ years of experience in science, technology, and agricultural research with modern web development tools to create user-friendly digital solutions that solve everyday challenges, improve decisions, and support smarter, sustainable growth.</p>
                     <div class="d-flex gap-3 justify-content-center justify-content-md-start mb-5 mb-md-0">
                         <a href="#projects" class="btn btn-accent btn-lg px-4">View My Work</a>
-                        <a href="#contact" class="btn btn-outline-light btn-lg px-4">Co-Create With Me</a>
+                        <a href="#connect-header" class="btn btn-outline-light btn-lg px-4">Co-Create With Me</a>
                     </div>
                 </div>
-                <div class="col-md-5 text-center mt-md-0">
+                <div class="col-md-5 text-center mt-4 mt-md-0">
                     <img src="gloria.jpeg" alt="Gloria Boakyewaa Adu" class="img-fluid rounded-circle hero-img shadow-lg">
                 </div>
+            </div>
         </div>
     </section>
 
     <section id="about" class="py-5 bg-light">
-        <div class="container py-4">
-            <h2 class="text-center fw-bold mb-5 position-relative">About Me</h2>
+        <div class="container">
+            <h2 class="text-center fw-bold mb-5">About Me</h2>
             <div class="row g-4 align-items-center">
                 <div class="col-lg-6">
                     <h3 class="h4 mb-3 text-dark">My Journey & Goals</h3>
                     <p class="text-muted">With a strong background in research, data management, and agricultural systems, I now use software development to build practical digital tools that solve everyday problems. I enjoy turning complex ideas and scattered processes into simple, user-friendly web applications that save time, improve decision-making, and create value.</p>
                     <p class="text-muted">My current focus is developing responsive web portals that are easy to use, well-organized, and designed to support people, businesses, and communities.</p>
                 </div>
-<div class="col-lg-6">
-    <h3 class="h4 mb-4 text-dark">Core Tech Skills</h3>
-    
-    <!-- Frontend Core Stack -->
-    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-        <span class="fw-semibold text-dark">HTML5 & CSS3 (Bootstrap / Grid)</span>
-        <div class="skill-icon-group d-flex align-items-center">
-            <i class="fa-brands fa-html5 icon-html5" title="HTML5"></i>
-            <i class="fa-brands fa-css3-alt icon-css3" title="CSS3"></i>
-            <i class="fa-brands fa-bootstrap icon-bootstrap" title="Bootstrap"></i>
-            <i class="fa-solid fa-table-cells-large icon-grid" title="Grid Layouts"></i>
-        </div>
-    </div>
-    
-    <!-- JavaScript & Modern Frameworks -->
-    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-        <span class="fw-semibold text-dark">JavaScript (ES6+) & React</span>
-        <div class="skill-icon-group d-flex align-items-center">
-            <i class="fa-brands fa-js icon-js" title="JavaScript"></i>
-            <i class="fa-solid fa-code icon-es6" title="ES6+ Features"></i>
-            <i class="fa-brands fa-react icon-react" title="React.js"></i>
-        </div>
-    </div>
-    
-    <!-- Cloud Infrastructure & Architecture -->
-    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-        <span class="fw-semibold text-dark">Cloud Computing & Infrastructure</span>
-        <div class="skill-icon-group d-flex align-items-center">
-            <i class="fa-solid fa-cloud icon-azure" title="Microsoft Azure Cloud"></i>
-        </div>
-    </div>
-    
-    <!-- Version Control & Collaboration -->
-    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-        <span class="fw-semibold text-dark">Git & Version Control</span>
-        <div class="skill-icon-group d-flex align-items-center">
-            <i class="fa-brands fa-git-alt icon-git" title="Git"></i>
-            <i class="fa-brands fa-github icon-github" title="GitHub"></i>
-        </div>
-    </div>
-    
-    <!-- Data Visualization -->
-    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
-        <span class="fw-semibold text-dark">Data Visualization</span>
-        <div class="skill-icon-group d-flex align-items-center">
-            <i class="fa-solid fa-chart-column icon-chart" title="Data Visualization"></i>
-        </div>
-    </div>
-</div>
-
+                <div class="col-lg-6">
+                    <h3 class="h4 mb-4 text-dark">Core Tech Skills</h3>
+                    
+                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+                        <span class="fw-semibold text-dark">HTML5 & CSS3 (Bootstrap / Grid)</span>
+                        <div class="skill-icon-group d-flex align-items-center">
+                            <i class="fa-brands fa-html5 icon-html5" title="HTML5"></i>
+                            <i class="fa-brands fa-css3-alt icon-css3" title="CSS3"></i>
+                            <i class="fa-brands fa-bootstrap icon-bootstrap" title="Bootstrap"></i>
+                            <i class="fa-solid fa-table-cells-large icon-grid" title="Grid Layouts"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+                        <span class="fw-semibold text-dark">JavaScript (ES6+) & React</span>
+                        <div class="skill-icon-group d-flex align-items-center">
+                            <i class="fa-brands fa-js icon-js" title="JavaScript"></i>
+                            <i class="fa-solid fa-code icon-es6" title="ES6+ Features"></i>
+                            <i class="fa-brands fa-react icon-react" title="React.js"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+                        <span class="fw-semibold text-dark">Cloud Computing & Infrastructure</span>
+                        <div class="skill-icon-group d-flex align-items-center">
+                            <i class="fa-solid fa-cloud icon-azure" title="Microsoft Azure Cloud"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+                        <span class="fw-semibold text-dark">Git & Version Control</span>
+                        <div class="skill-icon-group d-flex align-items-center">
+                            <i class="fa-brands fa-git-alt icon-git" title="Git"></i>
+                            <i class="fa-brands fa-github icon-github" title="GitHub"></i>
+                        </div>
+                    </div>
+                    
+                    <div class="d-flex justify-content-between align-items-center p-3 mb-3 skill-item shadow-sm">
+                        <span class="fw-semibold text-dark">Data Visualization</span>
+                        <div class="skill-icon-group d-flex align-items-center">
+                            <i class="fa-solid fa-chart-column icon-chart" title="Data Visualization"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects" class="py-5">
-        <div class="container py-4">
+        <div class="container">
             <h2 class="text-center fw-bold mb-5">Featured Projects</h2>
             <div class="row g-4">
                 <div class="col-md-4">
@@ -220,7 +255,7 @@
                             <span class="badge bg-secondary mb-2">HTML5</span> <span class="badge bg-secondary mb-2">CSS3</span> <span class="badge bg-secondary mb-2">JavaScript (ES6+)</span>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-4 pt-0">
-                            <a href=" https://gglob-spec.github.io/My-portfolio-case/mini-project" target="_blank" class="text-decoration-none text-accent fw-bold">Launch Live Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
+                            <a href="https://gglob-spec.github.io/My-portfolio-case/mini-project" target="_blank" class="text-decoration-none text-accent fw-bold">Launch Live Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -233,7 +268,7 @@
                             <span class="badge bg-secondary mb-2">CSS Grid</span> <span class="badge bg-secondary mb-2">Vanilla JS</span> <span class="badge bg-secondary mb-2">REST API</span>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-4 pt-0">
-                            <a href=" https://gglob-spec.github.io/My-portfolio-case/weather%20APP/" target="_blank" class="text-decoration-none text-accent fw-bold">Launch Live Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
+                            <a href="https://gglob-spec.github.io/My-portfolio-case/weather%20APP/" target="_blank" class="text-decoration-none text-accent fw-bold">Launch Live Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -242,11 +277,11 @@
                         <div class="card-body p-4">
                             <div class="text-accent mb-3"><i class="fa-solid fa-users fa-2x"></i></div>
                             <h4 class="card-title fw-bold">StockFlow Hub</h4>
-                            <p class="card-text text-muted">A secure tracking portal that connects commodity logistics, inventory, quality assurance, sales, and dispatch operations in one workflow, giving teams the insight to make timely, informed decisions..</p>
+                            <p class="card-text text-muted">A secure tracking portal that connects commodity logistics, inventory, quality assurance, sales, and dispatch operations in one workflow, giving teams the insight to make timely, informed decisions.</p>
                             <span class="badge bg-secondary mb-2">HTML5</span> <span class="badge bg-secondary mb-2">CSS3</span> <span class="badge bg-secondary mb-2">Chart.js</span>
                         </div>
                         <div class="card-footer bg-transparent border-0 p-4 pt-0">
-                            <a href="#contact" class="text-decoration-none text-accent fw-bold">Request a Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
+                            <a href="mailto:gloriaboakyewaa@yahoo.com?subject=StockFlow%20Hub%20Demo%20Request" class="text-decoration-none text-accent fw-bold">Request a Demo <i class="fa-solid fa-arrow-right-long small ms-1"></i></a>
                         </div>
                     </div>
                 </div>
@@ -255,49 +290,27 @@
     </section>
 
     <section id="contact" class="py-5 bg-light">
-        <div class="container py-4">
+        <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-7 mb-5 mb-lg-0">
-                    <h2 class="text-center text-lg-start fw-bold mb-4">Get In Touch</h2>
-                    <p class="text-center text-lg-start text-muted mb-5">Have an idea, project, or collaborative workspace in mind? Fill out the form below, or reach out via social links.</p>
+                <div class="col-md-11 col-lg-9 text-center">
+                    <h2 id="connect-header" class="fw-bold mb-3">Let's Connect</h2>
+                    <p class="text-muted mb-4">Have an idea, project, or collaboration in mind? I’d love to hear from you. Reach out directly via my professional channels below.</p>
                     
-                    <div class="card border-0 shadow-sm p-4">
-                        <form id="portfolioContactForm" novalidate>
-                            <div class="mb-3">
-                                <label for="userName" class="form-label fw-semibold">Your Name</label>
-                                <input type="text" class="form-control" id="userName" placeholder="John Doe" required>
-                                <div class="invalid-feedback">Please enter your name.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="userEmail" class="form-label fw-semibold">Email Address</label>
-                                <input type="email" class="form-control" id="userEmail" placeholder="john.doe@example.com" required>
-                                <div class="invalid-feedback">Please provide a valid email address.</div>
-                            </div>
-                            <div class="mb-3">
-                                <label for="userMessage" class="form-label fw-semibold">Your Message</label>
-                                <textarea class="form-control" id="userMessage" rows="5" placeholder="Enter your message here..." required></textarea>
-                                <div class="invalid-feedback">Message body cannot be empty.</div>
-                            </div>
-                            <button type="submit" class="btn btn-accent w-100 py-2 fw-bold">Send Message</button>
-                        </form>
-                        <div id="formSuccess" class="alert alert-success mt-3 d-none" role="alert">
-                            <i class="fa-solid fa-circle-check me-2"></i> Your message was validated and sent successfully!
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-5 ps-lg-5 contact-links text-center text-lg-start">
-                    <h3 class="h4 fw-bold mb-4 mt-lg-5 pt-lg-4">Connect Directly</h3>
-                    <div class="mb-4">
-                        <a href="https://www.linkedin.com/in/gloria-boakyewaa-adu-19384196" target="_blank">
-                            <i class="fa-brands fa-linkedin me-3" style="color: #0a66c2;"></i>Gloria Boakyewaa Adu
+                    <div class="contact-links-wrap d-flex flex-wrap justify-content-center gap-3 mt-4">
+                        <a href="https://www.linkedin.com/in/gloria-boakyewaa-adu-19384196" target="_blank" class="link-linkedin">
+                            <i class="fa-brands fa-linkedin me-3" style="color: #0a66c2;"></i>
+                            <span class="fw-bold">LinkedIn Profile</span>
+                        </a>
+                        <a href="https://wa.me/233243919417" target="_blank" class="link-whatsapp">
+                            <i class="fa-brands fa-whatsapp me-3" style="color: #25d366;"></i>
+                            <span class="fw-bold">WhatsApp Chat</span>
+                        </a>
+                        <a href="mailto:gloriaboakyewaa@yahoo.com" class="link-email">
+                            <i class="fa-solid fa-envelope me-3" style="color: var(--email-color);"></i>
+                            <span class="fw-bold">Email Message</span>
                         </a>
                     </div>
-                    <div>
-                        <a href="https://wa.me/233243919417" target="_blank">
-                            <i class="fa-brands fa-whatsapp me-3" style="color: #25d366;"></i>+233 24 391 9417
-                        </a>
-                    </div>
+                    
                 </div>
             </div>
         </div>
@@ -306,32 +319,11 @@
     <footer class="text-white py-4 mt-auto">
         <div class="container text-center">
             <div class="mb-3">
-                <p>&copy; 2026 GBA.dev. Crafted with elite architecture and responsive systems.</p>
-                <a href="https://www.linkedin.com/in/gloria-boakyewaa-adu-19384196" target="_blank" class="text-white mx-3 fs-4"><i class="fa-brands fa-linkedin" style="color: #0a66c2;"></i></a>
+                <p class="mb-2">&copy; 2026 GBA.dev. Crafted with elite architecture and responsive systems.</p>
             </div>
-            <p class="small mb-0 text-muted">&copy; 2026 Gloria Boakyewaa Adu. Built via Bootstrap & Vanilla JS.</p>
         </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        document.getElementById('portfolioContactForm').addEventListener('submit', function (event) {
-            event.preventDefault();
-            
-            const form = event.target;
-            const successBanner = document.getElementById('formSuccess');
-            successBanner.classList.add('d-none');
-            
-            if (!form.checkValidity()) {
-                event.stopPropagation();
-                form.classList.add('was-validated');
-            } else {
-                form.classList.remove('was-validated');
-                successBanner.classList.remove('d-none');
-                form.reset();
-            }
-        });
-    </script>
 </body>
 </html>
